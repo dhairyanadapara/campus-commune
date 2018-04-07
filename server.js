@@ -12,10 +12,12 @@ const hbs = require('hbs');
 const methodOverride = require('method-override');
 const path = require('path');
 
+
 let app = express();
 
 let secret = require('./config/secret');
 let userRoute = require('./routes/user');
+let newsRoute = require('./routes/news');
 let magRoute = require('./routes/mag');
 
 
@@ -52,6 +54,8 @@ app.set('view engine', 'hbs');
 
 
 app.use(userRoute);
+app.use(newsRoute);
+app.listen(3000, '127.0.0.1', () => {
 app.use(magRoute);
 
 app.listen(3000, () => {
