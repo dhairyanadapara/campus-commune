@@ -12,4 +12,55 @@
             </button>
         </div>
     </div>
+    <div>
+        {{#each user}}
+        <div>
+            <p>{{profile.name}}</p>
+        </div>
+        <div>
+            <p>{{profile.branch}}</p>
+        </div>
+        <div>
+            <p>{{profile.year}}</p>
+        </div>
+        <div>
+            <p>{{profile.email}}</p>
+        </div>
+        {{/each}}
+    </div>
+
+    <div>
+        <h2>Created</h2>
+        {{#each magscreat}}
+        <div class="card-body d-flex flex-column grid align-items-start">
+            <strong class="d-inline-block mb-2 text-primary">{{topic}}</strong>
+            <h3 class="mb-0">
+                <a class="text-dark" href="#">{{title}}</a>
+            </h3>
+            <div class="mb-1 text-muted">{{date}}</div>
+            <div class="mb-1 text-muted">{{time}}</div>
+            <p class="card-text mb-auto">{{description}}</p>
+            <form method="POST" action="/magdelete/{{id}}?_method=DELETE" >
+                <input class="btn btn-sm btn-outline-secondary" type="submit" value="Delete" />
+            </form>
+        </div>
+        {{/each}}
+    </div>
+    <div>
+        <h2>Attended</h2>
+        {{#each magpart}}
+        <div class="card-body d-flex flex-column grid align-items-start">
+            <strong class="d-inline-block mb-2 text-primary">{{topic}}</strong>
+            <h3 class="mb-0">
+                <a class="text-dark" href="#">{{title}}</a>
+            </h3>
+            <div class="mb-1 text-muted">{{date}}</div>
+            <div class="mb-1 text-muted">{{time}}</div>
+            <p class="card-text mb-auto">{{description}}</p>
+            <form action="/magdelete/{{id}}" action="/mag?_method=DELETE">
+                <button class="btn btn-sm btn-outline-secondary" type="submit">Delete</button>
+            </form>
+        </div>
+        {{/each}}
+    </div>
 </main>
