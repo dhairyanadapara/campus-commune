@@ -31,4 +31,8 @@ router.post('/meetandgreet',(req,res,next)=>{
     });
 });
 
+router.get('/magdetails',(req,res)=>{
+    res.render('/meetandgreet/magdetails');
+})
+
 module.exports = router;
