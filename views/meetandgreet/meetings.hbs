@@ -1,0 +1,25 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Meet & Greet</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <form method="GET" action="/addmag">
+                    <button class="btn btn-sm btn-outline-secondary">Add Meeting</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{#each mags}}
+    <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-primary">{{topic}}</strong>
+        <h3 class="mb-0">
+            <a class="text-dark" href="#">{{title}}</a>
+        </h3>
+        <div class="mb-1 text-muted">{{date}}</div>
+        <div class="mb-1 text-muted">{{time}}</div>
+        <p class="card-text mb-auto">{{description}}</p>
+        <a href="#">Continue reading</a>
+    </div>
+    {{/each}}
+</main>
