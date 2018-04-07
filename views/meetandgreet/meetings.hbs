@@ -11,7 +11,7 @@
     </div>
 
     {{#each mags}}
-    <div class="card-body d-flex flex-column align-items-start">
+    <div class="card-body d-flex flex-column grid align-items-start">
         <strong class="d-inline-block mb-2 text-primary">{{topic}}</strong>
         <h3 class="mb-0">
             <a class="text-dark" href="#">{{title}}</a>
@@ -19,7 +19,7 @@
         <div class="mb-1 text-muted">{{date}}</div>
         <div class="mb-1 text-muted">{{time}}</div>
         <p class="card-text mb-auto">{{description}}</p>
-        <a href="/magdetails">Continue reading</a>
+        <form action="/magdetails"><button class="btn btn-sm btn-outline-secondary" type="submit">Attend</button></form>
     </div>
     {{/each}}
 </main>

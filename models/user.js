@@ -9,6 +9,7 @@ let UserSchema =new mongoose.Schema({
         branch:{type: String, default:'', required:true},
         year:{type: Date, required:true}
     },
+    mags:[{type:String, default:''}]
 });
 
 UserSchema.pre('save',function(next){

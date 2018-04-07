@@ -2,6 +2,7 @@ let router = require('express').Router();
 let passport = require('passport');
 let User = require('../models/user');
 let passportConf = require('../config/passport');
+let MAG = require('../models/mag');
 
 router.get('/login', (req, res) => {
     if (req.user) return res.redirect('/dashboard');
@@ -13,27 +14,37 @@ router.get('/login', (req, res) => {
 
 
 router.post('/login', passport.authenticate('local-login', {
-        successRedirect: '/dashboard',
-        failureRedirect: '/login',
-    })
+    successRedirect: '/dashboard',
+    failureRedirect: '/login',
+})
 );
 
 router.get('/dashboard', (req, res, next) => {
-    if(!req.user){
+    if (!req.user) {
         res.redirect('/login');
     }
-    User.findOne({_id: req.user._id}, function (err, user) {
+    User.findOne({ _id: req.user._id }, function (err, user) {
         if (err) return next(err);
 
-        res.render('accounts/dashboard', {user: user});
-    });
+        MAG.find({ _id: req.user.mags }, (err, magscreat) => {
+            if (err) return err;
 
+            MAG.find({ people: req.user._id }, (err,magpart)=> {
+                if(err) return err;
+                console.log(magpart);
+                res.render('accounts/dashboard', { user, magscreat, magpart});
+            })
+
+        })
+
+
+    });
     //res.render('/accounts/login');
 });
 
 router.get('/signup', (req, res, next) => {
     res.render('accounts/signup', {
-        layout:'login'
+        layout: 'login'
     });
 });
 
@@ -47,7 +58,7 @@ router.post('/signup', (req, res, next) => {
     user.profile.year = req.body.year;
     user.profile.branch = req.body.branch;
 
-    User.findOne({email: req.body.email}, function (err, existingUser) {
+    User.findOne({ email: req.body.email }, function (err, existingUser) {
         if (existingUser) {
             return res.redirect('/signup');
         }

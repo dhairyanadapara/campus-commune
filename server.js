@@ -55,9 +55,8 @@ app.set('view engine', 'hbs');
 
 app.use(userRoute);
 app.use(newsRoute);
-app.listen(3000, '127.0.0.1', () => {
 app.use(magRoute);
 
 app.listen(3000, () => {
     console.log('Server is up');
-})
+});

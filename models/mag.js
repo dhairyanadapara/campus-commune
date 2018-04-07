@@ -7,7 +7,7 @@ let MAGSchema = new mongoose.Schema({
     date: { type: "String", required: true },
     time: { type: "String", required: true },
     place: { type: "String", required: true },
-    people: [{ String: "String", default: '' }]
+    people: [{ String: "String", default: ''}]
 });
 
 module.exports = mongoose.model('MAG', MAGSchema, 'mags');

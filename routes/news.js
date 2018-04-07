@@ -10,7 +10,7 @@ newsapi.v2.topHeadlines({
   country:'in'
 }).then(response => {
  	console.log(response.articles)
- 	res.render("news/news_page",{resource:response})
+ 	res.render("news/news_page",{layout:'newslayout' ,resource:response})
 });
   	
 })
