@@ -1,0 +1,20 @@
+
+
+<form method="get" action="/notes_entry">
+<button type="submit">Submit</button>
+</form>
+{{#each resource}}
+	<h3>{{title}}</h3><br>
+	<h3>{{subject}}</h3><br>
+	<h3>{{semester}}</h3><br>
+	<h3>{{hashtags}}</h3><br>
+	<h3>{{user_id}}</h3><br>
+	<h3>{{link}}</h3>
+	<form action="/rating_inc" method="get">
+		<input type="text" name="rating"/>
+		Provide Rating<input type="submit" name="submit"/>
+
+	</form>
+	<br>
+{{/each}}
+	 {{!--0 --}}

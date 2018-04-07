@@ -1,3 +1,4 @@
+const hbs = require('handlebars');
 let router = require('express').Router();
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('68e4f42592d0436a8f8a928de65c8ff5');
@@ -12,6 +13,6 @@ newsapi.v2.topHeadlines({
  	console.log(response.articles)
  	res.render("news/news_page",{resource:response})
 });
-  	
+ 	
 })
 module.exports = router;

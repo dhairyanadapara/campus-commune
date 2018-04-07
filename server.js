@@ -19,8 +19,8 @@ let secret = require('./config/secret');
 let userRoute = require('./routes/user');
 let newsRoute = require('./routes/news');
 let magRoute = require('./routes/mag');
-
-
+let notesRoute = require('./routes/notes')
+let notesEntryRoute = require("./routes/notes_entry")
 mongoose.connect(secret.database, (err) => {
     if (err)
         console.log(err);
@@ -55,8 +55,9 @@ app.set('view engine', 'hbs');
 
 app.use(userRoute);
 app.use(newsRoute);
-app.listen(3000, '127.0.0.1', () => {
 app.use(magRoute);
+app.use(notesRoute);
+app.use(notesEntryRoute);
 
 app.listen(3000, () => {
     console.log('Server is up');
