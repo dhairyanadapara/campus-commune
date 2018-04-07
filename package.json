@@ -1,0 +1,31 @@
+{
+  "name": "campus-commune",
+  "version": "1.0.0",
+  "description": "TeslaX",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhairyanadapara/campus-commune.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhairyanadapara/campus-commune/issues"
+  },
+  "homepage": "https://github.com/dhairyanadapara/campus-commune#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "hbs": "^4.0.1",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.13",
+    "morgan": "^1.9.0",
+    "session": "^0.1.0"
+  }
+}
