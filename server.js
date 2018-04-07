@@ -12,10 +12,12 @@ const hbs = require('hbs');
 const methodOverride = require('method-override');
 const path = require('path');
 
+
 let app = express();
 
 let secret = require('./config/secret');
 let userRoute = require('./routes/user');
+let newsRoute = require('./routes/news');
 
 mongoose.connect(secret.database, (err) => {
     if (err)
@@ -50,7 +52,7 @@ app.set('view engine', 'hbs');
 
 
 app.use(userRoute);
-
-app.listen(3000, '192.168.43.87', () => {
+app.use(newsRoute);
+app.listen(3000, '127.0.0.1', () => {
     console.log('Server is up');
 })
