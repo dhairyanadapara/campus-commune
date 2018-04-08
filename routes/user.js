@@ -26,21 +26,25 @@ router.get('/dashboard', (req, res, next) => {
     User.findOne({ _id: req.user._id }, function (err, user) {
         if (err) return next(err);
 
-        MAG.find({ _id: req.user.mags }, (err, magscreat) => {
+
+        MAG.find({ _id: req.user.mags }, function (err, magscreat) {
             if (err) return err;
 
-            MAG.find({ people: req.user._id }, (err,magpart)=> {
-                if(err) return err;
+            console.log(user.maga);
+            MAG.find({ _id: req.user.maga }, function (err, magpart) {
+                if (err) return err;
                 console.log(magpart);
-                res.render('accounts/dashboard', { user, magscreat, magpart});
+
+                // MAG.find({ _id: 'magid.[people]' }, function (err, magpart) {
+                // console.log(magpart);
+                res.render('accounts/dashboard', { user, magscreat, magpart });
             })
 
         })
 
-
-    });
-    //res.render('/accounts/login');
+    })
 });
+    //res.render('/accounts/login');
 
 router.get('/signup', (req, res, next) => {
     res.render('accounts/signup', {
