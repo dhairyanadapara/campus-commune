@@ -9,7 +9,8 @@ let UserSchema =new mongoose.Schema({
         branch:{type: String, default:'', required:true},
         year:{type: Date, required:true}
     },
-    mags:[{type:String, default:''}]
+    mags:[{ type : "ObjectId", ref: 'MAG' }],
+    maga:[{ type : "ObjectId", ref: 'MAG' }]
 });
 
 UserSchema.pre('save',function(next){
