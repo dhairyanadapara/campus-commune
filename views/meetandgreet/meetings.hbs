@@ -19,7 +19,7 @@
         <div class="mb-1 text-muted">{{date}}</div>
         <div class="mb-1 text-muted">{{time}}</div>
         <p class="card-text mb-auto">{{description}}</p>
-        <form action="/magdetails"><button class="btn btn-sm btn-outline-secondary" type="submit">Attend</button></form>
+        <form method="POST" action="/magdetails/{{id}}?_method=PATCH"><button class="btn btn-sm btn-outline-secondary" type="submit">Attend</button></form>
     </div>
     {{/each}}
 </main>
