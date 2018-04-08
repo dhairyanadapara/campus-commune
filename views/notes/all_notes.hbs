@@ -1,8 +1,11 @@
 
-
 <form method="get" action="/notes_entry">
-<button type="submit">Submit</button>
+<button type="submit">Add a Note</button>
 </form>
+<form method="get" action="/mynotes">
+<button type="submit">View My Note</button>
+</form>
+<div className="row dib br3 pa3 ma2 grow bw2 shadow-5"/>
 {{#each resource}}
 	<h3>{{title}}</h3><br>
 	<h3>{{subject}}</h3><br>
@@ -10,11 +13,8 @@
 	<h3>{{hashtags}}</h3><br>
 	<h3>{{user_id}}</h3><br>
 	<h3>{{link}}</h3>
-	<form action="/rating_inc" method="get">
-		<input type="text" name="rating"/>
-		Provide Rating<input type="submit" name="submit"/>
-
-	</form>
+	
+	</div>
 	<br>
 {{/each}}
 	 {{!--0 --}}

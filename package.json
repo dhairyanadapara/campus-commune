@@ -40,5 +40,8 @@
     "request": "^2.85.0",
     "save": "^2.3.2",
     "session": "^0.1.0"
+  },
+  "devDependencies": {
+    "tachyons": "^4.9.1"
   }
 }

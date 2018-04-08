@@ -1,0 +1,27 @@
+<form method="get" action="/notes_entry">
+<button type="submit">Add a Note</button>
+</form>
+<form method="get" action="/mynotes">
+<button type="submit">View My Note</button>
+</form>
+<table className="table table-striped" style="text-align:center"/>
+<thead>
+	<th>title</th>
+	<th>subject</th>
+	<th>semester</th>
+	<th>hashtags</th>
+	<th>user_id</th>
+	<th>link</th>
+	</thead>
+	
+{{#each resource}}
+	<tr>
+	<td><h3>{{title}}</h3></td>
+	<td>{{subject}}</h3><td>
+	<td>{{semester}}</h3><td>
+	<td>{{hashtags}}</h3><td>
+	<td>{{user_id}}</h3><td>
+	<h3>{{link}}</h3>
+	</tr>
+{{/each}}
+</table>

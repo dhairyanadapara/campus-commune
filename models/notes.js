@@ -6,9 +6,8 @@ let notesSchema = new mongoose.Schema({
 	semester:{type:Number, required:true},
 	year:{type:String,required:true},
 	user_id:{type:String,required:true},
-	ratings:[{type:Number}],
-	hashtags:[{type:String}],
+	hashtags:{type:String},
 	link:{type:String,required:true,default:''}
-})
+});
 
-module.exports = mongoose.model("Notes",notesSchema,'notes')
+module.exports = mongoose.model('Notes',notesSchema,'notes')

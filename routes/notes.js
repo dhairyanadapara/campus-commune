@@ -5,7 +5,9 @@ router.get("/notes",(req,res)=>{
 		console.log("here");
 		res.redirect("/login")
 	}
-	Notes.find({}).then((note)=>{
+	Notes.where('user_id').ne(req.user._id).then((note)=>{
+		console.log(note);
+		console.log(req.user._id)
 		res.render("notes/all_notes",{resource:note})
 		
 	})

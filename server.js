@@ -21,13 +21,14 @@ let newsRoute = require('./routes/news');
 let magRoute = require('./routes/mag');
 let notesRoute = require('./routes/notes')
 let notesEntryRoute = require("./routes/notes_entry")
+let mynotesEntryRoute = require("./routes/mynotes")
 mongoose.connect(secret.database, (err) => {
     if (err)
         console.log(err);
     else
         console.log('database is connected');
 });
-
+    
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -58,7 +59,7 @@ app.use(newsRoute);
 app.use(magRoute);
 app.use(notesRoute);
 app.use(notesEntryRoute);
-
+app.use(mynotesEntryRoute);
 app.listen(3000, () => {
     console.log('Server is up');
 });
