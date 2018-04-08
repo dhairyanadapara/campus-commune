@@ -16,5 +16,15 @@ router.get("/notes",(req,res)=>{
 	})
 });
 
+router.delete('/notedelete/:id',(req,res)=>{
+	let nid = req.params.id;
+
+	Notes.findByIdAndRemove(nid, (err) => {
+        if (err) return err;
+
+        res.redirect('/mynotes');
+    })
+})
+
 module.exports = router;
 

@@ -1,10 +1,38 @@
-<form action="/notes_entry" method="post">
-TITLE<input type="text" name="title"/>
-SUBJECT<input type="text" name="subject"/>
-SEM<input type="text" name="semester"/>
-YEAR<input type="text" name="year"/>
-RATINGS(1-5)<input type="text" name="ratings"/>
-HASHTAGS(SEP BY COMMA)<input type="text" name="hashtags"/>
-LINK<input type="text" name="link"/>
-<input type="submit" name="submit"/>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Add Note</h1>
+    </div>
+<form class="form-signin" method="post" action="/notes_entry" style="width:300px; padding-top:50px;">
+
+    <div class="form-label-group">
+        <label for="inputEmail">Title</label>
+        <input name="title" type="text" id="inputTitle" class="form-control" required autofocus>
+    </div>
+
+    <div class="form-label-group">
+        <label for="inputTitle">Subject</label>
+        <input name="subject" type="text" id="inputSubjec" class="form-control" required autofocus>
+    </div>
+
+    <div class="form-label-group">
+        <label for="inputPassword">Semester</label>
+        <input name="semester" type="textarea" id="inputSemester" class="form-control" required>
+    </div>
+    <div class="form-label-group">
+        <label for="inputPassword">Year</label>
+        <input name="year" type="date" id="inputYear" class="form-control" required>
+    </div>
+    <div class="form-label-group">
+        <label for="inputPassword">Hashtag</label>
+        <input name="hashtag" type="text" id="inputHashtag" class="form-control" required>
+    </div>
+    <div class="form-label-group">
+        <label for="inputPassword">Link</label>
+        <input name="link" type="text" id="inputLink" class="form-control" required>
+    </div>
+    <br>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
 </form>

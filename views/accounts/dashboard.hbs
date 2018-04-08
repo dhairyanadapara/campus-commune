@@ -1,36 +1,36 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">Share</button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
-            </div>
-            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-            </button>
-        </div>
     </div>
     <div>
-        {{#each user}}
-        <div>
-            <p>{{profile.name}}</p>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="well well-sm">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                            </div>
+                            <div class="col-sm-6 col-md-8">
+                                <h4>
+                                    {{user.profile.name}}</h4>
+                                <p>
+                                    <i class="glyphicon glyphicon-envelope"></i>{{user.profile.email}}
+                                    <br />
+                                    <i class="glyphicon glyphicon-globe"></i>
+                                    <i class="glyphicon glyphicon-envelope">{{user.profile.branch}}</a>
+                                        <br />
+                                        <i class="glyphicon glyphicon-gift"></i>{{user.profile.year}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <p>{{profile.branch}}</p>
-        </div>
-        <div>
-            <p>{{profile.year}}</p>
-        </div>
-        <div>
-            <p>{{profile.email}}</p>
-        </div>
-        {{/each}}
     </div>
 
     <div>
-        <h2>Created</h2>
+        <h1>Created</h1>
         {{#each magscreat}}
         <div class="card-body d-flex flex-column grid align-items-start">
             <strong class="d-inline-block mb-2 text-primary">{{topic}}</strong>
@@ -40,14 +40,15 @@
             <div class="mb-1 text-muted">{{date}}</div>
             <div class="mb-1 text-muted">{{time}}</div>
             <p class="card-text mb-auto">{{description}}</p>
-            <form method="POST" action="/magdelete/{{id}}?_method=DELETE" >
+            <form method="POST" action="/magdelete/{{id}}?_method=DELETE">
                 <input class="btn btn-sm btn-outline-secondary" type="submit" value="Delete" />
             </form>
         </div>
         {{/each}}
     </div>
+    <hr>
     <div>
-        <h2>Attended</h2>
+        <h1>Enrolled</h1>
         {{#each magpart}}
         <div class="card-body d-flex flex-column grid align-items-start">
             <strong class="d-inline-block mb-2 text-primary">{{topic}}</strong>
@@ -57,9 +58,6 @@
             <div class="mb-1 text-muted">{{date}}</div>
             <div class="mb-1 text-muted">{{time}}</div>
             <p class="card-text mb-auto">{{description}}</p>
-            <form action="/magdelete/{{id}}" action="/mag?_method=DELETE">
-                <button class="btn btn-sm btn-outline-secondary" type="submit">Delete</button>
-            </form>
         </div>
         {{/each}}
     </div>
